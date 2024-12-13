@@ -1,4 +1,4 @@
-type champion = {
+export type champion = {
   id: string;
   key: string;
   name: string;
@@ -14,12 +14,14 @@ type champion = {
   };
 };
 
-type championDetail = {
+export type championDetail = {
   id: string;
   key: string;
   name: string;
   title: string;
   blurb: string;
+  tags: [string];
+  partype: string;
   image: {
     full: string;
     sprite: string;
