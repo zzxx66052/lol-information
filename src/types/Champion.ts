@@ -20,7 +20,7 @@ export type championDetail = {
   name: string;
   title: string;
   blurb: string;
-  tags: [string];
+  tags: string[];
   partype: string;
   image: {
     full: string;
@@ -31,7 +31,7 @@ export type championDetail = {
     w: number;
     h: number;
   };
-  state: {
+  stats: {
     hp: number; //hp
     armor: number; //방어력
     spellblock: number; //마법저항력

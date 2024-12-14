@@ -10,11 +10,11 @@ export default async function ChampionsPage() {
   const latestVersion = await getLatestVersion();
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-font-gold text-center mb-6">
+    <div className="container mx-auto p-2">
+      <h1 className="text-3xl font-bold text-font-gold text-start m-8">
         챔피언 리스트
       </h1>
-      <div className="grid grid-cols-8 gap-4 overflow-x-auto">
+      <div className="grid grid-cols-6 gap-8 overflow-x-auto">
         {Object.values(champions).map((champion: champion) => (
           <Card
             key={champion.id}

@@ -1,4 +1,7 @@
+import { championDetail } from "./../types/Champion";
 import { champion } from "@/types/Champion";
+
+const baseUrl = "https://ddragon.leagueoflegends.com/cdn";
 
 // 최신 정보를 불러오는 함수
 export async function getLatestVersion(): Promise<string> {
@@ -19,7 +22,7 @@ export async function getLatestVersion(): Promise<string> {
 export async function fetchChampionList(): Promise<Record<string, champion>> {
   try {
     const latestVersion = await getLatestVersion();
-    const championsUrl = `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/ko_KR/champion.json`;
+    const championsUrl = `${baseUrl}/${latestVersion}/data/ko_KR/champion.json`;
 
     const response = await fetch(championsUrl, {
       next: { revalidate: 86400 },
@@ -30,4 +33,16 @@ export async function fetchChampionList(): Promise<Record<string, champion>> {
   } catch (error) {
     throw new Error("Unable to fetch champion list.");
   }
+}
+
+export async function fetchChampionDetail(id: string): Promise<championDetail> {
+  const latestVersion = await getLatestVersion();
+  const response = await fetch(
+    `${baseUrl}/${latestVersion}/data/ko_KR/champion/${id}.json`
+  );
+  if (!response.ok) {
+    throw new Error(`Failed to fetch champion data: ${response.statusText}`);
+  }
+  const data = await response.json();
+  return data.data[id];
 }
