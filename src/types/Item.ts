@@ -28,3 +28,9 @@ export interface Item {
 export interface ItemsPageProps {
   items: Record<string, Item>;
 }
+
+export interface ItemDetailProps {
+  params: {
+    id: string;
+  };
+}
