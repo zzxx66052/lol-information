@@ -1,3 +1,4 @@
+import { Item } from "@/types/Item";
 import { championDetail } from "./../types/Champion";
 import { champion } from "@/types/Champion";
 
@@ -45,4 +46,17 @@ export async function fetchChampionDetail(id: string): Promise<championDetail> {
   }
   const data = await response.json();
   return data.data[id];
+}
+
+export async function fetchItemList(version: string) {
+  const latestVersion = await getLatestVersion();
+  const response = await fetch(
+    `${baseUrl}/${latestVersion}/data/ko_KR/item.json`
+  );
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(`Failed to fetch item data: ${response.statusText}`);
+  }
+
+  return data.data as Record<string, Item>;
 }
