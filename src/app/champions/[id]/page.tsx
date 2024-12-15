@@ -45,7 +45,7 @@ export default async function ChampionPage({ params }: ChampionsPageProps) {
         {champion.blurb}
       </p>
 
-      <div className="flex flex-row justify-between border border-[#0AC8B9] p-6 rounded-lg mt-8">
+      <div className="flex flex-row justify-between p-6 rounded-lg mt-8">
         <div className="champion-stats">
           <h3 className="text-xl font-semibold text-[#C89B3C] mb-2">Stats</h3>
           <ul className="list-disc list-inside">

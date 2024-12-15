@@ -54,6 +54,7 @@ export async function fetchItemList(version: string) {
     `${baseUrl}/${latestVersion}/data/ko_KR/item.json`
   );
   const data = await response.json();
+  console.log(data);
   if (!response.ok) {
     throw new Error(`Failed to fetch item data: ${response.statusText}`);
   }
