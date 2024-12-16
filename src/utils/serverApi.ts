@@ -1,6 +1,6 @@
 import { Item } from "@/types/Item";
-import { championDetail } from "./../types/Champion";
-import { champion } from "@/types/Champion";
+import { ChampionDetail } from "./../types/Champion";
+import { Champion } from "@/types/Champion";
 
 const baseUrl = "https://ddragon.leagueoflegends.com/cdn";
 
@@ -20,7 +20,7 @@ export async function getLatestVersion(): Promise<string> {
 }
 
 // 최신 정보에서 리스트를 가져와 data에 저장하는 함수
-export async function fetchChampionList(): Promise<Record<string, champion>> {
+export async function fetchChampionList(): Promise<Record<string, Champion>> {
   try {
     const latestVersion = await getLatestVersion();
     const championsUrl = `${baseUrl}/${latestVersion}/data/ko_KR/champion.json`;
@@ -36,7 +36,7 @@ export async function fetchChampionList(): Promise<Record<string, champion>> {
   }
 }
 
-export async function fetchChampionDetail(id: string): Promise<championDetail> {
+export async function fetchChampionDetail(id: string): Promise<ChampionDetail> {
   const latestVersion = await getLatestVersion();
   const response = await fetch(
     `${baseUrl}/${latestVersion}/data/ko_KR/champion/${id}.json`

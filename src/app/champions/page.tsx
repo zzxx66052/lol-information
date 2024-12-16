@@ -1,4 +1,4 @@
-import { champion } from "@/types/Champion";
+import { Champion } from "@/types/Champion";
 import { fetchChampionList, getLatestVersion } from "@/utils/serverApi";
 import Card from "@/components/champions/Card";
 
@@ -15,7 +15,7 @@ export default async function ChampionsPage() {
         챔피언 리스트
       </h1>
       <div className="grid grid-cols-6 gap-8 overflow-x-auto">
-        {Object.values(champions).map((champion: champion) => (
+        {Object.values(champions).map((champion: Champion) => (
           <Card
             key={champion.id}
             champion={champion}

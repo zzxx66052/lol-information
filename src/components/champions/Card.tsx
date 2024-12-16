@@ -1,9 +1,9 @@
-import { champion } from "@/types/Champion";
+import { Champion } from "@/types/Champion";
 import Image from "next/image";
 import Link from "next/link";
 
 type CardProps = {
-  champion: champion;
+  champion: Champion;
   latestVersion: string;
 };
 

@@ -1,4 +1,4 @@
-export type champion = {
+export type Champion = {
   id: string;
   key: string;
   name: string;
@@ -14,7 +14,7 @@ export type champion = {
   };
 };
 
-export type championDetail = {
+export type ChampionDetail = {
   id: string;
   key: string;
   name: string;
