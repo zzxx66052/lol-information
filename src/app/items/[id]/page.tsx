@@ -35,7 +35,7 @@ export default async function ItemDetailPage({ params }: ItemDetailProps) {
   }
 
   return (
-    <div className="item-Detail container mx-auto p-4 rounded-lg">
+    <div className="item-Detail container mx-auto max-w-screen-xl p-4 rounded-lg">
       <h1 className="text-4xl font-bold text-center text-[#C89B3C] m-4">
         {item.name}
       </h1>
@@ -69,15 +69,12 @@ export default async function ItemDetailPage({ params }: ItemDetailProps) {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-[#C89B3C] mb-1">Gold</h2>
+            <h2 className="text-2xl font-bold text-[#C89B3C] mb-1">가격</h2>
             <p className="text-white text-[20px] font-bold leading-relaxed ">
-              Base : {item.gold.base}
+              구매가격 : {item.gold.total}
             </p>
             <p className="text-white text-[20px] font-bold leading-relaxed ">
-              total : {item.gold.total}
-            </p>
-            <p className="text-white text-[20px] font-bold leading-relaxed ">
-              sell : {item.gold.sell}
+              판매가격 : {item.gold.sell}
             </p>
           </div>
 

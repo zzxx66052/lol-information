@@ -25,7 +25,7 @@ export default async function ChampionPage({ params }: ChampionsPageProps) {
   const champion = await fetchChampionDetail(id);
 
   return (
-    <div className="champion-detail container mx-auto p-4 rounded-lg shadow-md">
+    <div className="champion-detail container mx-auto max-w-screen-xl p-4 rounded-lg shadow-md">
       <h1 className="text-4xl font-bold text-center text-[#C89B3C]">
         {champion.name}
       </h1>
@@ -36,8 +36,8 @@ export default async function ChampionPage({ params }: ChampionsPageProps) {
         <Image
           src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_0.jpg`}
           alt={champion.name}
-          width={500}
-          height={300}
+          width={350}
+          height={100}
           className="rounded-lg"
         />
       </div>

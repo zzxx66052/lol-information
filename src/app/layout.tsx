@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "리그오브레전드 정보",
@@ -14,27 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen">
-        <header className="bg-gray-800 text-white p-4">
-          <nav className="flex justify-around items-center w-full py-1 font-bold">
-            <Link href="/" className="hover:text-yellow-300">
-              홈
-            </Link>
-            <Link href="/champions" className="hover:text-yellow-300">
-              챔피언 목록
-            </Link>
-            <Link href="/items" className="hover:text-yellow-300">
-              아이템 목록
-            </Link>
-            <Link href="/rotation" className="hover:text-yellow-300">
-              챔피언 로테이션
-            </Link>
-          </nav>
-        </header>
-        <main className="flex-grow">{children}</main>
-        <footer className="bg-gray-800 text-white p-4 text-center">
-          © 2024 My Website. All rights reserved
-        </footer>
+      <body className="flex flex-col min-h-screen bg-gradient-to-r from-[#000] to-[#0A1428]">
+        <Header />
+        <main className="flex-grow pt-20 pb-16">{children}</main>
+        <Footer />
       </body>
     </html>
   );

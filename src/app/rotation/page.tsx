@@ -8,6 +8,8 @@ import { fetchChampionList, getLatestVersion } from "@/utils/serverApi";
 import { useEffect, useState } from "react";
 
 export default function RotationPage() {
+  //tanstack Query refactoring
+
   const [rotationData, setRotationData] = useState<ChamionRotation | null>(
     null
   );
@@ -63,13 +65,13 @@ export default function RotationPage() {
   }
 
   return (
-    <div className="p-8 min-h-screen">
-      <h1 className="text-3xl font-bold text-center mb-8">
+    <div className="containter mx-auto min-h-screen max-w-screen-xl p-2 ">
+      <h1 className="text-3xl font-bold text-[#C89B3C] text-center mb-8">
         무료 챔피언 로테이션
       </h1>
 
       <div className="mb-8">
-        <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <ul className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {Object.keys(champions).map((championKey) => (
             <li key={championKey}>
               <Card

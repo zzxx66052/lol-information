@@ -13,11 +13,11 @@ export default async function ItemsPage() {
   const items = await fetchItemList(latestVersion);
 
   return (
-    <div className="items-page container mx-auto p-4">
-      <h1 className="text-4xl text-[#C89B3C] font-bold text-start mb-6">
+    <div className="container min-h-screen mx-auto max-w-screen-xl p-2">
+      <h1 className="text-3xl text-[#C89B3C] font-bold text-center mb-4">
         Items
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 ">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4  ">
         {Object.entries(items).map(([id, item]) => (
           <Link href={`/items/${id}`} key={id}>
             <div className="item-card p-4 text-center">
@@ -32,7 +32,10 @@ export default async function ItemsPage() {
                 {item.name.replace(/<\/?[^>]+(>|$)|@[^ ]+/g, "")}
               </h2>
               <p className="text-sm text-[#CDFAFA]">
-                {item.plaintext.replace(/<\/?[^>]+(>|$)|@[^ ]+/g, "")}
+                구매가격 : {item.gold.total}
+              </p>
+              <p className="text-sm text-[#CDFAFA]">
+                판매가격 : {item.gold.sell}
               </p>
             </div>
           </Link>
