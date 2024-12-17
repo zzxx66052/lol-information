@@ -10,7 +10,7 @@ export default async function ChampionsPage() {
   const latestVersion = await getLatestVersion();
 
   return (
-    <div className="container min-h-screen max-w-screen-xl mx-auto p-2">
+    <div className="container min-h-screen max-w-screen-xl mt-8 mx-auto p-2">
       <h1 className="text-3xl font-bold text-font-gold text-center mb-8">
         챔피언 리스트
       </h1>

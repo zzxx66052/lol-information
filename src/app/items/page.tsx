@@ -14,7 +14,7 @@ export default async function ItemsPage() {
 
   return (
     <div className="container min-h-screen mx-auto max-w-screen-xl p-2">
-      <h1 className="text-3xl text-[#C89B3C] font-bold text-center mb-4">
+      <h1 className="text-3xl text-[#C89B3C] font-bold text-center mt-8 mb-4">
         Items
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4  ">

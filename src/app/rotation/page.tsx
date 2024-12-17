@@ -63,7 +63,7 @@ export default function RotationPage() {
 
   return (
     <div className="containter mx-auto min-h-screen max-w-screen-xl p-2 ">
-      <h1 className="text-3xl font-bold text-[#C89B3C] text-center mb-8">
+      <h1 className="text-3xl font-bold text-[#C89B3C] text-center mt-8 mb-8">
         무료 챔피언 로테이션
       </h1>
 

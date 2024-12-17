@@ -17,7 +17,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="right-side flex space-x-6">
+        <div className="right-side font-bold flex space-x-6">
           <Link href="/rotation" className="hover:text-yellow-300">
             챔피언 로테이션
           </Link>
