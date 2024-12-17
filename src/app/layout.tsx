@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import QueryProvider from "./provider";
 
 export const metadata: Metadata = {
   title: "리그오브레전드 정보",
@@ -17,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col min-h-screen bg-gradient-to-r from-[#000] to-[#0A1428]">
         <Header />
-        <main className="flex-grow pt-20 pb-16">{children}</main>
+        <main className="flex-grow pt-20 pb-16">
+          <QueryProvider>{children}</QueryProvider>
+        </main>
         <Footer />
       </body>
     </html>
