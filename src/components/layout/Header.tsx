@@ -20,7 +20,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="right-side text-[#C89B3C] font-bold flex space-x-6">
+        <div className="right-side hidden md:flex text-[#C89B3C] font-bold flex space-x-6">
           <Link href="/rotation" className="hover:text-yellow-300">
             챔피언 로테이션
           </Link>
@@ -31,7 +31,36 @@ export default function Header() {
             아이템 목록
           </Link>
         </div>
+
+        {/* 모바일 메뉴 토글 버튼 */}
+        <div className="md:hidden flex items-center">
+          <button className="text-[#C89B3C] font-bold hover:text-yellow-300">
+            ☰
+          </button>
+        </div>
       </nav>
+
+      {/* 모바일 메뉴 */}
+      <div className="md:hidden bg-gradient-to-r from-[#000] to-[#0A1428] p-4 space-y-4">
+        <Link
+          href="/rotation"
+          className="block text-[#C89B3C] font-bold hover:text-yellow-300"
+        >
+          챔피언 로테이션
+        </Link>
+        <Link
+          href="/champions"
+          className="block text-[#C89B3C] font-bold hover:text-yellow-300"
+        >
+          챔피언 목록
+        </Link>
+        <Link
+          href="/items"
+          className="block text-[#C89B3C] font-bold hover:text-yellow-300"
+        >
+          아이템 목록
+        </Link>
+      </div>
     </header>
   );
 }

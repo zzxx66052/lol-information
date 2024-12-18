@@ -1,8 +1,13 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import QueryProvider from "./provider";
+
+import { Suspense } from "react";
+import Loading from "@/components/error/Loading";
+import ErrorBoundary from "@/components/error/ErrorBoundary";
 
 export const metadata: Metadata = {
   title: "리그오브레전드 정보",
@@ -18,9 +23,13 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col min-h-screen bg-gradient-to-r from-[#000] to-[#0A1428]">
         <Header />
-        <main className="flex-grow pt-16 pb-16">
-          <QueryProvider>{children}</QueryProvider>
-        </main>
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>
+            <main className="flex-grow pt-16 pb-16">
+              <QueryProvider>{children}</QueryProvider>
+            </main>
+          </Suspense>
+        </ErrorBoundary>
         <Footer />
       </body>
     </html>

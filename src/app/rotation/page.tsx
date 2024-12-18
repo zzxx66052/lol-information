@@ -12,8 +12,8 @@ export default function RotationPage() {
   //tanstack Query refactoring
   const {
     data: latestVersion,
-    isPending: isVersionPending,
-    isError: isVersionError,
+    isPending: isLatestVersionPending,
+    isError: isLatestVersionError,
   } = useQuery({
     queryKey: ["latestVersion"],
     queryFn: getLatestVersion,
@@ -21,8 +21,8 @@ export default function RotationPage() {
 
   const {
     data: rotationData,
-    isPending: isRotationPending,
-    isError: isRotationError,
+    isPending: isRotationDataPending,
+    isError: isRotationDataError,
   } = useQuery({
     queryKey: ["rotationData"],
     queryFn: getChampionRotation,
@@ -30,16 +30,17 @@ export default function RotationPage() {
 
   const {
     data: championList,
-    isPending: isChampionsListPending,
-    isError: isChampionsListError,
+    isPending: isChampionListPending,
+    isError: isChampionListError,
   } = useQuery({
     queryKey: ["championList"],
     queryFn: fetchChampionList,
   });
 
   const isPending =
-    isVersionPending || isRotationPending || isChampionsListPending;
-  const isError = isVersionError || isRotationError || isChampionsListError;
+    isLatestVersionPending || isRotationDataPending || isChampionListPending;
+  const isError =
+    isLatestVersionError || isRotationDataError || isChampionListError;
 
   if (isPending) {
     return <p>로딩동작중...</p>;
