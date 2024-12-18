@@ -37,4 +37,42 @@ export type ChampionDetail = {
     spellblock: number; //마법저항력
     attackdamage: number; //공격력
   };
+  skins: [
+    {
+      id: string;
+      name: string;
+      num: number;
+      chromas: boolean;
+    }
+  ];
+  spells: [
+    {
+      id: string;
+      name: string;
+      description: string;
+      cooldown: number[];
+      image: {
+        full: string;
+        sprite: string;
+        group: string;
+        x: number;
+        y: number;
+        w: number;
+        h: number;
+      };
+    }
+  ];
+  passive: {
+    name: string;
+    description: string;
+    image: {
+      full: string;
+      sprite: string;
+      group: string;
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+  };
 };

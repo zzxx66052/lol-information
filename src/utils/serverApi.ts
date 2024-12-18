@@ -39,7 +39,8 @@ export async function fetchChampionList(): Promise<Record<string, Champion>> {
 export async function fetchChampionDetail(id: string): Promise<ChampionDetail> {
   const latestVersion = await getLatestVersion();
   const response = await fetch(
-    `${baseUrl}/${latestVersion}/data/ko_KR/champion/${id}.json`
+    `${baseUrl}/${latestVersion}/data/ko_KR/champion/${id}.json`,
+    { cache: "no-store" }
   );
   if (!response.ok) {
     throw new Error(`Failed to fetch champion data: ${response.statusText}`);
