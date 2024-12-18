@@ -1,7 +1,7 @@
-import { Item, ItemDetailProps } from "@/types/Item";
-import { fetchItemList, getLatestVersion } from "@/utils/serverApi";
 import { Metadata } from "next";
 import Image from "next/image";
+import { Item, ItemDetailProps } from "@/types/Item";
+import { fetchItemList, getLatestVersion } from "@/utils/serverApi";
 
 export async function generateStaticParams() {
   const latestVersion = await getLatestVersion();
@@ -64,7 +64,7 @@ export default async function ItemDetailPage({ params }: ItemDetailProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ps-10 gap-8">
             <div>
               <h2 className="text-2xl font-bold text-[#C89B3C] mb-2">Stats</h2>
-              <ul className="list-disc list-inside text-[20px]">
+              <ul className="list-disc text-white list-inside text-[20px]">
                 {Object.entries(item.stats).map(([key, value]) => (
                   <li key={key}>
                     {key}: {value}

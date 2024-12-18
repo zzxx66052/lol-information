@@ -2,30 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 배경 색상 정의 */
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 9, 20, 40;
-  --background-end-rgb: 10, 20, 40;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 9, 20, 40;
-    --background-end-rgb: 10, 20, 40;
-  }
-}
-
 /* 배경 및 텍스트 색상 적용 */
 body {
   color: rgb(var(--foreground-rgb));
+  background-color: rgb(255, 255, 255); /* 기본값: 라이트 모드 */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "NEXON Lv1 Gothic OTF";
+  cursor: url("https://brand.riotgames.com/images/league-of-legends/cursor.png"),
+    auto;
+}
+
+.dark body {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-start-rgb));
   background: linear-gradient(
     to bottom,
     rgb(var(--background-start-rgb)),
     rgb(var(--background-end-rgb))
   );
-  background-color: rgb(var(--background-start-rgb));
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-family: "NEXON Lv1 Gothic OTF";
   cursor: url("https://brand.riotgames.com/images/league-of-legends/cursor.png"),
     auto;

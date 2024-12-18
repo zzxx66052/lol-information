@@ -1,7 +1,9 @@
-import { fetchItemList, getLatestVersion } from "@/utils/serverApi";
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+import { Metadata } from "next";
+
+import { fetchItemList, getLatestVersion } from "@/utils/serverApi";
 
 export const metadata: Metadata = {
   title: "Items List",

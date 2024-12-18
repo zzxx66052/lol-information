@@ -57,7 +57,7 @@ export default async function ChampionPage({ params }: ChampionsPageProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ps-10 gap-8 mt-8">
           <div className="champion-stats">
             <h3 className="text-xl font-semibold text-[#C89B3C] mb-2">Stats</h3>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc text-white list-inside">
               <li>체력: {champion.stats.hp}</li>
               <li>방어력: {champion.stats.armor}</li>
               <li>마법저항력: {champion.stats.spellblock}</li>
@@ -134,20 +134,20 @@ export default async function ChampionPage({ params }: ChampionsPageProps) {
         </div>
       </div>
 
-      {/* Skins Section */}
+      {/* 스킨 세션 설명 */}
       <div className="champion-skins mt-8">
         <h3 className="text-xl font-semibold text-[#C89B3C] mb-4">Skins</h3>
         <div className="flex flex-wrap gap-4">
           {champion.skins.map((skin) => (
             <div
               key={skin.id}
-              className="bg-[#1C1C21] p-4 rounded-lg shadow-md w-full md:w-48"
+              className="bg-[#1C1C21] p-4 rounded-lg shadow-md  md:w-48"
             >
               <Image
                 src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skin.num}.jpg`}
                 alt={skin.name}
-                width={128}
-                height={72}
+                width={150}
+                height={150}
                 className="rounded"
               />
               <h4 className="text-lg font-bold text-[#C89B3C] mt-2">
