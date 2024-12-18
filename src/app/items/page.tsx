@@ -15,12 +15,12 @@ export default async function ItemsPage() {
   return (
     <div className="container min-h-screen mx-auto max-w-screen-xl p-2">
       <h1 className="text-3xl text-[#C89B3C] font-bold text-center mt-8 mb-4">
-        Items
+        아이템 목록
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4  ">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 ">
         {Object.entries(items).map(([id, item]) => (
           <Link href={`/items/${id}`} key={id}>
-            <div className="item-card p-4 text-center">
+            <div className="item-card p-4 text-center min-h-full rounded-lg  bg-[#3C3C41]">
               <Image
                 src={`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/item/${item.image.full}`}
                 alt={item.name}

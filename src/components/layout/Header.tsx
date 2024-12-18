@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="bg-gray-800 text-white fixed top-0 left-0 right-0 z-10 shadow-lg">
+    <header className=" fixed top-0 left-0 right-0 z-10 bg-gradient-to-r from-[#000] to-[#0A1428]">
       <nav className="flex justify-between items-center p-4 max-w-7xl mx-auto">
         <div className="left-side flex items-center space-x-4">
           <Image
@@ -12,12 +12,15 @@ export default function Header() {
             width={40}
             height={40}
           />
-          <Link href="/" className="text-xl font-bold hover:text-yellow-300">
-            홈
+          <Link
+            href="/"
+            className="text-xl text-[#C89B3C] font-bold hover:text-yellow-300"
+          >
+            League of Legend
           </Link>
         </div>
 
-        <div className="right-side font-bold flex space-x-6">
+        <div className="right-side text-[#C89B3C] font-bold flex space-x-6">
           <Link href="/rotation" className="hover:text-yellow-300">
             챔피언 로테이션
           </Link>

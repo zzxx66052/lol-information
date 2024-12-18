@@ -11,9 +11,9 @@ export default function Card({ champion, latestVersion }: CardProps) {
   return (
     <Link href={`/champions/${champion.id}`}>
       <div
-        className="flex flex-col items-center max-w-150px text-[rgb(9, 20, 40)] rounded-lg 
-          overflow-hidden transform transition-transform hover:scale-110
-          text-center 
+        className="flex flex-col items-center max-w-150px bg-[#3C3C41] text-[rgb(9, 20, 40)] rounded-lg 
+          overflow-hidden transform transition-transform hover:scale-110 p-2
+          text-center min-h-full
           "
       >
         <Image

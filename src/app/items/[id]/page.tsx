@@ -35,7 +35,7 @@ export default async function ItemDetailPage({ params }: ItemDetailProps) {
   }
 
   return (
-    <div className="item-Detail container mx-auto max-w-screen-xl p-4 rounded-lg">
+    <div className="item-Detail bg-[#3C3C41] container mx-auto max-w-screen-xl p-4 rounded-lg">
       <h1 className="text-4xl font-bold text-center text-[#C89B3C] m-4">
         {item.name}
       </h1>

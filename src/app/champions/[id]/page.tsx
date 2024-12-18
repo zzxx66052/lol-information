@@ -25,7 +25,7 @@ export default async function ChampionPage({ params }: ChampionsPageProps) {
   const champion = await fetchChampionDetail(id);
 
   return (
-    <div className="champion-detail container mx-auto max-w-screen-xl p-4 rounded-lg shadow-md">
+    <div className="champion-detail container mx-auto max-w-screen-xl p-4 rounded-lg bg-[#3C3C41] shadow-md">
       <h1 className="text-4xl font-bold text-center text-[#C89B3C]">
         {champion.name}
       </h1>

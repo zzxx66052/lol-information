@@ -68,7 +68,7 @@ export default function RotationPage() {
       </h1>
 
       <div className="mb-8">
-        <ul className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <ul className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
           {Object.keys(matchedChampions).map((championKey) => (
             <li key={championKey}>
               <Card

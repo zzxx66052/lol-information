@@ -14,7 +14,7 @@ export default async function ChampionsPage() {
       <h1 className="text-3xl font-bold text-font-gold text-center mb-8">
         챔피언 리스트
       </h1>
-      <div className="grid grid-cols-6 gap-8">
+      <div className="grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
         {Object.values(champions).map((champion: Champion) => (
           <Card
             key={champion.id}

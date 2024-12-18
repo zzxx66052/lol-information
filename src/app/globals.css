@@ -26,4 +26,15 @@ body {
     rgb(var(--background-end-rgb))
   );
   background-color: rgb(var(--background-start-rgb));
+  font-family: "NEXON Lv1 Gothic OTF";
+  cursor: url("https://brand.riotgames.com/images/league-of-legends/cursor.png"),
+    auto;
+}
+
+@font-face {
+  font-family: "NEXON Lv1 Gothic OTF";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
