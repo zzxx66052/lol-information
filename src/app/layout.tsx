@@ -1,14 +1,15 @@
 import "@/styles/globals.css";
+import { Suspense } from "react";
+
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
+
+import QueryProvider from "../components/provider/RQProvider";
+import Loading from "@/components/error/Loading";
+import ErrorBoundary from "@/components/error/ErrorBoundary";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import QueryProvider from "../components/provider/RQProvider";
-
-import { Suspense } from "react";
-import Loading from "@/components/error/Loading";
-import ErrorBoundary from "@/components/error/ErrorBoundary";
-import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "리그오브레전드 정보",

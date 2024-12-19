@@ -1,7 +1,7 @@
 "use client";
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export default function QueryProvider({
   children,
@@ -13,7 +13,7 @@ export default function QueryProvider({
       new QueryClient({
         defaultOptions: {
           queries: {
-            staleTime: 1500,
+            staleTime: 1500, //Delay Time : 1.5s
           },
         },
       })

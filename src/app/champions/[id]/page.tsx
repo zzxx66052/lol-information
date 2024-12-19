@@ -53,6 +53,7 @@ export default async function ChampionPage({ params }: ChampionsPageProps) {
         </p>
       </div>
 
+      {/* 챔피언의 상세 정보 세션(스탯, 태그, 리소스) */}
       <div className="nav-container flex justify-center ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ps-10 gap-8 mt-8">
           <div className="champion-stats">

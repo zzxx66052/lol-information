@@ -1,11 +1,11 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   // 클라이언트 측에서만 렌더링
   useEffect(() => {
@@ -19,7 +19,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded"
+      className=" dark: text-gray-800 dark:text-gray-200"
     >
       {theme === "dark" ? "☀️" : "🌑"}
     </button>

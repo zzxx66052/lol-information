@@ -13,6 +13,7 @@ export async function GET(request: Request) {
     });
   }
 
+  // apiUrl에 ApiKey 토큰 적용
   try {
     const response = await fetch(apiUrl, {
       headers: {

@@ -1,5 +1,4 @@
 import { ChamionRotation } from "@/types/ChampionRotation";
-import { resolve } from "path";
 
 export const getChampionRotation = async (): Promise<ChamionRotation> => {
   const delay = (ms: number) =>

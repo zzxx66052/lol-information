@@ -1,5 +1,6 @@
 "use client";
 
+// 에러 바운더리
 import { Component, ReactNode } from "react";
 
 interface ErrorBoundaryProps {
