@@ -31,12 +31,16 @@ export type ChampionDetail = {
     w: number;
     h: number;
   };
+
+  // 스탯
   stats: {
     hp: number; //hp
     armor: number; //방어력
     spellblock: number; //마법저항력
     attackdamage: number; //공격력
   };
+
+  // 스킨 정보
   skins: [
     {
       id: string;
@@ -45,6 +49,8 @@ export type ChampionDetail = {
       chromas: boolean;
     }
   ];
+
+  // 스킬 정보
   spells: [
     {
       id: string;
@@ -62,6 +68,8 @@ export type ChampionDetail = {
       };
     }
   ];
+
+  // 패시브 정보
   passive: {
     name: string;
     description: string;

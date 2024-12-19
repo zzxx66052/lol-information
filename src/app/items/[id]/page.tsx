@@ -1,17 +1,20 @@
+import Image from "next/image";
+import { Metadata } from "next";
+
 import { Item, ItemDetailProps } from "@/types/Item";
 import { fetchItemList, getLatestVersion } from "@/utils/serverApi";
-import { Metadata } from "next";
-import Image from "next/image";
 
 export async function generateStaticParams() {
   const latestVersion = await getLatestVersion();
   const items = await fetchItemList(latestVersion);
 
+  // 아이템의 ID값만 추출(최신버전)
   return Object.keys(items).map((id) => ({
     id,
   }));
 }
 
+// MetaData 적용
 export async function generateMetadata({
   params,
 }: ItemDetailProps): Promise<Metadata> {
@@ -30,10 +33,6 @@ export default async function ItemDetailPage({ params }: ItemDetailProps) {
   const items: Record<string, Item> = await fetchItemList(latestVersion);
   const item = items[params.id];
   const higherItems = item.into ? item.into.map((id) => items[id]) : [];
-
-  if (!item) {
-    console.log("item not definded");
-  }
 
   return (
     <div className="item-Detail bg-[#3C3C41] container mx-auto max-w-screen-xl p-4 rounded-xl">
@@ -64,7 +63,7 @@ export default async function ItemDetailPage({ params }: ItemDetailProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ps-10 gap-8">
             <div>
               <h2 className="text-2xl font-bold text-[#C89B3C] mb-2">Stats</h2>
-              <ul className="list-disc list-inside text-[20px]">
+              <ul className="list-disc text-white list-inside text-[20px]">
                 {Object.entries(item.stats).map(([key, value]) => (
                   <li key={key}>
                     {key}: {value}

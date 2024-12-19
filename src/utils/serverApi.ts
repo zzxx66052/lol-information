@@ -1,6 +1,8 @@
 import { Item } from "@/types/Item";
-import { ChampionDetail } from "./../types/Champion";
+
 import { Champion } from "@/types/Champion";
+
+import { ChampionDetail } from "./../types/Champion";
 
 const baseUrl = "https://ddragon.leagueoflegends.com/cdn";
 
@@ -36,6 +38,7 @@ export async function fetchChampionList(): Promise<Record<string, Champion>> {
   }
 }
 
+// 최신 정보를 토대로 챔피언 디테일 정보를 data에 저장하는 함수
 export async function fetchChampionDetail(id: string): Promise<ChampionDetail> {
   const latestVersion = await getLatestVersion();
   const response = await fetch(
@@ -49,6 +52,7 @@ export async function fetchChampionDetail(id: string): Promise<ChampionDetail> {
   return data.data[id];
 }
 
+// 최신정보를 토대로 아이템 리스트 정보를 data에 저장하는 함수
 export async function fetchItemList(version: string) {
   const latestVersion = await getLatestVersion();
   const response = await fetch(

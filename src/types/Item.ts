@@ -3,7 +3,7 @@ export interface Item {
   description: string;
   colloq: string;
   plaintext: string;
-  into?: string[];
+  into?: string[]; //상위 아이템 정보
   image: {
     full: string;
     sprite: string;
@@ -13,6 +13,8 @@ export interface Item {
     w: number;
     h: number;
   };
+
+  // 아이템 가격
   gold: {
     base: number;
     purchasable: boolean;

@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { FaHome } from "react-icons/fa";
 import { FaRegRectangleList } from "react-icons/fa6";
 import { GiChampions } from "react-icons/gi";
@@ -6,6 +7,7 @@ import { RiFileListFill } from "react-icons/ri";
 
 export default function Nav() {
   return (
+    // 홈 페이지 아래 아이콘 session
     <div className="flex space-x-4 mt-3">
       <Link href="/">
         <button className="relative group bg-[#C89B3C] text-black text-center text-sm md:text-base font-bold py-2 px-4 rounded-full transition-transform hover:scale-105">

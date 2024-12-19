@@ -1,7 +1,9 @@
-import { fetchItemList, getLatestVersion } from "@/utils/serverApi";
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+import { Metadata } from "next";
+
+import { fetchItemList, getLatestVersion } from "@/utils/serverApi";
 
 export const metadata: Metadata = {
   title: "Items List",
@@ -17,6 +19,8 @@ export default async function ItemsPage() {
       <h1 className="text-3xl text-[#C89B3C] font-bold text-center mt-8 mb-4">
         아이템 목록
       </h1>
+
+      {/* 아이템 리스트를 나타내는 div */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 ">
         {Object.entries(items).map(([id, item]) => (
           <Link href={`/items/${id}`} key={id}>

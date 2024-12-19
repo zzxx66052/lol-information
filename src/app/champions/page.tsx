@@ -1,7 +1,9 @@
-import { Champion } from "@/types/Champion";
-import { fetchChampionList, getLatestVersion } from "@/utils/serverApi";
 import Card from "@/components/champions/Card";
 
+import { fetchChampionList, getLatestVersion } from "@/utils/serverApi";
+import { Champion } from "@/types/Champion";
+
+// ISR로 동작하기 위한 revalidate
 export const revalidate = 86400;
 
 export default async function ChampionsPage() {
@@ -14,6 +16,8 @@ export default async function ChampionsPage() {
       <h1 className="text-3xl font-bold text-font-gold text-center mb-8">
         챔피언 리스트
       </h1>
+
+      {/* 챔피언 리스트의 카드 세션 */}
       <div className="grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
         {Object.values(champions).map((champion: Champion) => (
           <Card
